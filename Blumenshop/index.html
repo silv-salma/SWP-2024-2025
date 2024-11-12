@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src = "script.js"></script>
+    <title>Blumengeschäft</title>
+</head>
+<body>
+
+    <h1>Blumengeschäft</h1>
+
+    <form action="/action_page.php"
+        oninput="">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Max Mustermann">
+        <br>
+
+        <label for="email">E-Mail:</label>
+        <input type="text" id="email" name="email" placeholder="irgendwas@blabla.bla">
+        <br>
+
+        <label for="blumen">Produkte:</label>
+
+        <select id="blumenAnzeigen" name="blumen" onchange="zeigePreis()">
+            <option value="Sonnenblume" data-preis = "1.00" selected>Sonnenblume</option>
+            <option value="Tulpe" data-preis = "2.00" >Tulpe</option>
+            <option value="Lilie" data-preis = "3.00" >Lilie</option>
+            <option value="Rose" data-preis = "4.00" >Rose</option>
+            <option value="Edelweiß" data-preis = "5.00" >Edelweiß</option>
+        </select>
+    </form>
+
+    <button onclick = "zeileEinfuegen()" type = "button">Hinzufügen</button>
+    <br>
+    <br>
+    Preis: <div id="preis"></div>
+
+    <textarea name="message" rows="10" cols="40">Hallo, 
+ich habe noch folgenede Anmerkung:</textarea> 
+    <br>
+    <br>
+
+    <button onclick="bestellen()">Bestellen</button>
+    <br>
+
+    <h1>Warenkorb</h1>
+    <br>
+    <table id = "tabelle" style="border:1px solid black;">
+        <th style="border:1px solid black;" id="produkt">Produkt</th>
+        <th style="border:1px solid black;" id="preis">Preis</th>
+        </tr>
+    </table>
+
+    <p id = "gesamtPreis">
+        Gesamtpreis: 
+    </p>
+</body>
+</html> 

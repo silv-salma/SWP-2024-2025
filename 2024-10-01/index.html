@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bankomat</title>
+    <script defer src="script.js"></script>
+</head>
+<body style="background-color: grey;">
+    
+    <h1>Bankomat</h1>
+    <form>
+        <label for="menge">Wählen Sie den Betrag der ausgezahlt werden soll:</label>
+        <br>
+        <br>
+        <select id="menge" name="menge">
+          <option value="100">100€</option>
+          <option value="200">200€</option>
+          <option value="300">300€</option>
+          <option value="other">Ein anderer Betrag bis zu 400€</option>
+        </select>
+        <br>
+        <br>
+        <button type="button" onclick="ermittleAuszahlung()">Auszahlen</button>
+      </form>
+      <br>
+      <div id="auszahlung"></div>
+
+</body>
+</html>

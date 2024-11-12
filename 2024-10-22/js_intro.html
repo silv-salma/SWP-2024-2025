@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>Einfach HTML Seite mit JS</title>
+</head>
+<body>
+	<div id="meineId1">meineId1: Irgendein Inhalt 1</div>
+	<div id="meineId2">meineId2: Irgendein Inhalt 2</div>
+	<div id="meineId3">meineId3: Irgendein Inhalt 3</div>
+	<div id="meineId4">meineId4: Irgendein Inhalt 4</div>
+	<div id="meineIdblabla">meineIdblabla: Blabla</div>
+	<br><br>
+	<button id="btn1" onClick="namensAbfrage();">JavaScript mach was</button>
+	<button id="btn2" onClick="inhaltFrage1();">Inhalt 1</button>
+	<button id="btn3" onClick="inhaltFrage2();">Inhalt 2</button>
+	<button id="btn4" onClick="inhaltFrage3();">Inhalt 3</button>
+
+	<pre>
+Teste es mit folgenden ids: 1,2,3,4     blabla     (irgendeiner ungueltigen id)
+	</pre>
+
+<script>
+
+var meinCoolesObjekt = { vorname: "Max", nachname: "Mustermann" };
+console.log(meinCoolesObjekt);
+
+let xyz = 23;
+abc = 1; //var
+z = xyz + abc; //24
+console.log(z);
+
+function namensAbfrage() {
+	var name = prompt("Ihr Name?");
+	alert("Hallo " + name + "!");
+}
+
+function inhaltAendern1(neuerInhalt, divNummer = 1) {
+	document.getElementById("meineId" + divNummer).innerHTML = neuerInhalt;
+}
+
+function inhaltAendern2(neuerInhalt, divNummer = 1) {
+	const elementId = `meineId${divNummer}`;
+	document.getElementById(elementId).innerHTML = neuerInhalt;
+}
+
+function inhaltAendern3(neuerInhalt, divNummer = 1) {
+	const elementId = `#meineId${divNummer}`; //Achtung: hier wird # am Anfang hinzugefügt
+	document.querySelector(elementId).innerHTML = neuerInhalt;
+}
+
+function inhaltFrage1() {
+	meinInhalt = prompt("Was soll dort stehen?");
+
+	welchesDiv = prompt("Welches DIV?", "1");
+	
+	//ist die Eingabe sinnvoll?
+	zulaessigeDivWerte = [ '1', '2', '3', '4', 'blabla' ]; //Diese werte sind OK
+	if (zulaessigeDivWerte.includes(welchesDiv)) {
+		inhaltAendern1(meinInhalt, welchesDiv);
+	}
+	else {
+		alert("Denk nach! Es gibt dieses Div nicht!");
+	}
+}
+
+function inhaltFrage2() {
+	meinInhalt = prompt("Was soll dort stehen?");
+	welchesDiv = prompt("Welches DIV?", "1");
+	
+	divMin = 1;
+	divMax = 4;
+	//was machen wir mit blabla?
+
+	if ( divMin <= parseInt(welchesDiv) && divMax >= parseInt(welchesDiv) ) {
+		inhaltAendern2(meinInhalt, welchesDiv);
+	}
+	else {
+		alert("Denk nach! Es gibt dieses Div nicht!");
+	}
+}
+
+function inhaltFrage3() {
+	meinInhalt = prompt("Was soll dort stehen?");
+	welchesDiv = prompt("Welches DIV?", "1");
+
+	if (document.getElementById(`meineId${welchesDiv}`) !== null) {
+		inhaltAendern3(meinInhalt, welchesDiv);
+	}
+	else {
+		alert("Denk nach! Es gibt dieses Div nicht!");
+	}
+}
+</script>
+</body>
+</html>

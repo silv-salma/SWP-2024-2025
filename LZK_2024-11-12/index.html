@@ -9,7 +9,66 @@
 
     <h1>LZK Probetest</h1>
 
-    <label placeholder = "Max Mustermann" ></label>
+    <br>
+
+    <p>Name:
+    <input id = "name" placeholder = "Max Mustermann" value="name"></input>
+    </p>
+    <br>
+    <form action="/action_page.php">
+        <label for="fruits">Wählen Sie eine Frucht:</label>
+        <select name="fruits" id="fruits">
+          <option value="apfel" selected >Apfel</option>
+          <option value="birne">Birne</option>
+          <option value="kirsche">Kirsche</option>
+          <option value="marille">Marille</option>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
+      <br>
+      <br>
+      <button type = "button" onclick="abstimmen()">Abstimmen</button>
+
+
+
+
+
+      <script>
+
+        function abstimmen(){
+
+        let fruit;
+        switch (fruits) {
+          case "Apfel":
+            fruit = "Apfel";
+            break;
+          case "Birne":
+            fruit = "Birne";
+            break;
+          case "Kirsche":
+            fruit = "Kirsche";
+            break;
+          case "Marille":
+            fruit = "Marille";
+            break;
+        }
+        alert ("Sie haben die Frucht " + fruit + "gewählt.")
+            
+
+        if(name = 0){
+            alert("Name darf nicht leer sein!");
+        } else if (name < 4){
+            alert("Name zu kurz!")
+        } else {
+            alert("Sie" + name + )
+        }
+
+        }
+
+
+
+
+      </script>
 
 </body>
 </html>

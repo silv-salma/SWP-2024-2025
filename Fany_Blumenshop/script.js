@@ -62,3 +62,31 @@ function zeigePreis() {
   
   
   }
+
+
+
+  let totalPrice = 0;
+
+
+  document.getElementById('addButton').addEventListener('click', function() {
+
+      const itemSelect = document.getElementById('item');
+
+      const selectedItemPrice = parseFloat(itemSelect.value);
+
+      const selectedItemText = itemSelect.options[itemSelect.selectedIndex].text;
+
+      const cartList = document.getElementById('cart');
+
+      const newItem = document.createElement('li');
+
+      newItem.textContent = selectedItemText;
+
+      cartList.appendChild(newItem);
+
+
+      totalPrice += selectedItemPrice;
+
+      document.getElementById('totalPrice').textContent = totalPrice.toFixed(2);
+
+  });

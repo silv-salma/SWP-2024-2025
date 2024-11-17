@@ -25,18 +25,20 @@
         <label for="blumen">Produkte:</label>
 
         <select id="blumenAnzeigen" name="blumen" onchange="zeigePreis()">
-            <option value="1.00"  selected>Sonnenblume</option>
-            <option value="2.00" >Tulpe</option>
-            <option value="3.00" >Lilie</option>
-            <option value="4.00" >Rose</option>
-            <option value="5.00" >Edelweiß</option>
+            
+            <option value="1.00" name="Sonnenblume" selected="">Sonnenblume</option>
+            <option value="2.00" name="Tulpe">Tulpe</option>
+            <option value="3.00" name="Lilie">Lilie</option>
+            <option value="4.00" name="Rose">Rose</option>
+            <option value="5.00" name="Edelweiß">Edelweiß</option>
+        
         </select>
     </form>
 
     <button onclick = "zeileEinfuegen()" type = "button">Hinzufügen</button>
     <br>
     <br>
-    Preis: <div id="preis"></div>
+    Preis: <div id="preisBlumen"></div>
 
     <textarea name="message" rows="10" cols="40">Hallo, 
 ich habe noch folgenede Anmerkung:</textarea> 
@@ -56,7 +58,7 @@ ich habe noch folgenede Anmerkung:</textarea>
     </table>
     </div>
 
-        Gesamtpreis: <p id = "gesamtPreis"></p>
+        <div id = "gesamtPreis">Gesamtpreis:</div>
 
 </body>
 </html> 

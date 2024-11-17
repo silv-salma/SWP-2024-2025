@@ -1,7 +1,6 @@
 function zeigePreis() {
   const blumenAnzeigen = document.getElementById("blumenAnzeigen");
-  const preisDiv = document.getElementById("preis");
-  const ausgewaehltesProdukt = blumenAnzeigen.value.innerHTML
+  const preisDiv = document.getElementById("preisBlumen");
 
   let preis = blumenAnzeigen.value
 
@@ -15,10 +14,10 @@ function bestellen() {
 function zeileEinfuegen() {
   const tabelle = document.getElementById("tabelle");
   const select = document.getElementById("blumenAnzeigen");
-  const produktName = select.value;
+  const produktName = select.options[select.selectedIndex].text;
 
   const produktPreis =
-    select.options[select.selectedIndex].getAttribute("value");
+  select.options[select.selectedIndex].getAttribute("value");
 
   const neueReihe = tabelle.insertRow(-1);
 
@@ -27,4 +26,9 @@ function zeileEinfuegen() {
 
   zelleName.innerHTML = produktName;
   zellePreis.innerHTML = `€${produktPreis}`;
+}
+
+function gesamtSumme(){
+
+
 }

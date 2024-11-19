@@ -10,47 +10,54 @@
 </head>
 <body>
 
+    <div class="row">
+    <div class="col-md-3">
+    <div class="container pt-5">
     <h1>Blumengeschäft</h1>
 
     <form action="/action_page.php"
         oninput="">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Max Mustermann">
-        <br>
-
+        <label>Name:</label>
+        <input class="form-control" type="text" id="name" name="name" placeholder="Max Mustermann">
+        </div>
+        <div class="form-group">
         <label for="email">E-Mail:</label>
-        <input type="text" id="email" name="email" placeholder="irgendwas@blabla.bla">
+        <input class="form-control" type="text" id="email" name="email">
         <br>
-
+        </div>
+        <div class="d-flex justify-content-end">
         <label for="blumen">Produkte:</label>
-
-        <select id="blumenAnzeigen" name="blumen" onchange="zeigePreis()">
+        <select class="form-control" id="blumenAnzeigen" name="blumen" onchange="zeigePreis()">
             
             <option value="1.00" name="Sonnenblume" selected="">Sonnenblume</option>
             <option value="2.00" name="Tulpe">Tulpe</option>
             <option value="3.00" name="Lilie">Lilie</option>
             <option value="4.00" name="Rose">Rose</option>
             <option value="5.00" name="Edelweiß">Edelweiß</option>
-        
         </select>
+        Preis: <div id="preis"></div>
+        </div>
     </form>
 
-    <button onclick = "zeileEinfuegen()" type = "button">Hinzufügen</button>
+    <button onclick = "zeileEinfuegen()" type = "button" class="btn btn-success">Hinzufügen</button>
+    </div>
     <br>
     <br>
-    Preis: <div id="preisBlumen"></div>
 
     <textarea name="message" rows="10" cols="40">Hallo, 
 ich habe noch folgenede Anmerkung:</textarea> 
     <br>
     <br>
 
-    <button onclick="bestellen()">Bestellen</button>
+    </div>
+    </div> 
     <br>
-
+    <br>
+    <div class="col-md-6">
+    <div class="container pt-5"> 
     <h1>Warenkorb</h1>
     <br>
-    <div class="container mt-3"></div>
+    <div class="col-md-6"></div>
     <table id = "tabelle" class="table table-striped">
         <th id="produkt">Produkt</th>
         <th id="preis">Preis</th>
@@ -58,7 +65,11 @@ ich habe noch folgenede Anmerkung:</textarea>
     </table>
     </div>
 
-        <div id = "gesamtPreis">Gesamtpreis:</div>
+    <div class="d-flex justify-content-between" id = "gesamtPreis" >Gesamtpreis:</div>
+    <br>
+    <button type="button" class="btn btn-primary" onclick="bestellen()">Bestellen</button>
+   </div>
+   </div>
 
 </body>
 </html> 

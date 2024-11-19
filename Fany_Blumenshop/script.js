@@ -26,9 +26,19 @@ function zeileEinfuegen() {
 
   zelleName.innerHTML = produktName;
   zellePreis.innerHTML = `€${produktPreis}`;
+
+  gesamtSumme();
 }
 
-function gesamtSumme(){
+function gesamtSumme() {
+  const tabelle = document.getElementById("tabelle");
+  let gesamt = 0;
 
+  for (let i = 1; i < tabelle.rows.length; i++) {
+      const preisText = tabelle.rows[i].cells[1].innerText;
+      const preis = parseFloat(preisText.replace('€', '').trim());
+      gesamt += preis;
 
+  }
+  document.getElementById("gesamtPreis").innerText = "Gesamtsumme: €" + gesamt.toFixed(2);
 }

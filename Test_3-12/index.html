@@ -40,22 +40,18 @@
 
         if (name.value === "") {
           alert("Benutzername leer");
-          return false;
         }
 
         if (name.lenght < 5) {
           alert("Benutzername zu kurz");
-          return false;
         }
 
         if (essen.value === "") {
           alert("Keine Auswahl getroffen");
-          return false;
         }
 
         if (!bedingungen) {
           alert("Nutzungsbedingungen nicht akzeptiert");
-          return false;
         }
 
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -63,7 +59,6 @@
           alert("Ungültige E-Mail-Adresse");
         } else {
           alert(`Sie ${name} haben sich für ${essen} angemeldet. Vielen Dank!`);
-          return true;
         }
       }
     </script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <body>
+    <h1>Test</h1>
+
+    <label for="name">Benutzername:</label>
+    <input id="name" placeholder="Max Mustermann" required />
+    <br />
+    <br />
+    <label for="email">E-Mail:</label>
+    <input id="email" placeholder="beispiel@domain.com" required />
+    <br />
+    <br />
+    <label for="essen">Auswählen:</label>
+    <select id="essen" required>
+      <option value="Frühstück">Frühstück</option>
+      <option value="Mittagessen">Mittagessen</option>
+      <option value="Abendessen">Abendessen</option>
+      <option value="Snack">Snack</option>
+    </select>
+    <br />
+    <br />
+    <input type="checkbox" id="bedingungen" />
+    <label for="bedingungen">Ich akzeptiere die Nutzungsbedingungen</label>
+    <br />
+    <br />
+    <button onclick="ueberpruefen()">Absenden</button>
+
+    <script>
+      function ueberpruefen() {
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const essen = document.getElementById("essen").value;
+        const bedingungen = document.getElementById("bedingungen").checked;
+
+        if (name === "") {
+          alert("Benutzername leer");
+          return false;
+        }
+
+        if (name.lenght < 5) {
+          alert("Benutzername zu kurz");
+          return false;
+        }
+
+        if (!bedingungen) {
+          alert("Nutzungsbedingungen nicht akzeptiert");
+          return false;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          alert("Ungültige E-Mail-Adresse");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -2,7 +2,7 @@ function zeigePreis() {
   const blumenAnzeigen = document.getElementById("blumenAnzeigen");
   const preisDiv = document.getElementById("preisBlumen");
 
-  let preis = blumenAnzeigen.value
+  let preis = blumenAnzeigen.value;
 
   preisDiv.innerText = preis + " €";
 }
@@ -17,7 +17,7 @@ function zeileEinfuegen() {
   const produktName = select.options[select.selectedIndex].text;
 
   const produktPreis =
-  select.options[select.selectedIndex].getAttribute("value");
+    select.options[select.selectedIndex].getAttribute("value");
 
   const neueReihe = tabelle.insertRow(-1);
 
@@ -35,10 +35,10 @@ function gesamtSumme() {
   let gesamt = 0;
 
   for (let i = 1; i < tabelle.rows.length; i++) {
-      const preisText = tabelle.rows[i].cells[1].innerText;
-      const preis = parseFloat(preisText.replace('€', '').trim());
-      gesamt += preis;
-
+    const preisText = tabelle.rows[i].cells[1].innerText;
+    const preis = parseFloat(preisText.replace("€", "").trim());
+    gesamt += preis;
   }
-  document.getElementById("gesamtPreis").innerText = "Gesamtsumme: €" + gesamt.toFixed(2);
+  document.getElementById("gesamtPreis").innerText =
+    "Gesamtsumme: €" + gesamt.toFixed(2);
 }

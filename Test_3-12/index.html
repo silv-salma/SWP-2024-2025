@@ -18,6 +18,7 @@
     <br />
     <label for="essen">Auswählen:</label>
     <select id="essen" required>
+      <option value=""></option>
       <option value="Frühstück">Frühstück</option>
       <option value="Mittagessen">Mittagessen</option>
       <option value="Abendessen">Abendessen</option>
@@ -33,32 +34,35 @@
 
     <script>
       function ueberpruefen() {
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const essen = document.getElementById("essen").value;
-        const bedingungen = document.getElementById("bedingungen").checked;
-
-        if (name.value === "") {
+        if (document.getElementById("name").value == "") {
           alert("Benutzername leer");
-        }
-
-        if (name.lenght < 5) {
-          alert("Benutzername zu kurz");
-        }
-
-        if (essen.value === "") {
-          alert("Keine Auswahl getroffen");
-        }
-
-        if (!bedingungen) {
-          alert("Nutzungsbedingungen nicht akzeptiert");
-        }
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          alert("Ungültige E-Mail-Adresse");
         } else {
-          alert(`Sie ${name} haben sich für ${essen} angemeldet. Vielen Dank!`);
+          if (document.getElementById("name").value.length < 5) {
+            alert("Benutzername zu kurz");
+          } else {
+            if (document.getElementById("essen").value == "") {
+              alert("Keine Auswahl getroffen");
+            } else {
+              if (document.getElementById("bedingungen").checked == false) {
+                alert("Nutzungsbedingungen nicht akzeptiert");
+              } else {
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (
+                  !emailPattern.test(document.getElementById("email").value)
+                ) {
+                  alert("Ungültige E-Mail-Adresse");
+                } else {
+                  alert(
+                    `Sie ${
+                      document.getElementById("name").value
+                    } haben sich für ${
+                      document.getElementById("essen").value
+                    } angemeldet. Vielen Dank!`
+                  );
+                }
+              }
+            }
+          }
         }
       }
     </script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js_Objects</title>
+  </head>
+  <body>
+    <p id="objects"></p>
+
+    <script>
+      function FamilyMember(name, color, age, eye) {
+        this.name = name;
+        this.favouriteColor = color;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      const myFather = new FamilyMember("Alaudin", "green", 52, "blue");
+      const myMother = new FamilyMember("Lisa", "green", 38, "green");
+      const mySister = new FamilyMember("Naima", "blue", 10, "blue");
+      const mySelf = new FamilyMember("Salima", "darkblue", 15, "blue");
+    </script>
+  </body>
+</html>

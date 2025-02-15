@@ -3,17 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheet.css">
     <title>Button Hell</title>
   </head>
   <body>
-    <h1>
-      Button Hell
-      <h1 id="anzahl"></h1>
-    </h1>
+    <h1 id="anzahl">Button Hell</h1>
+    <input placeholder="Löschen"></input>
+    <p>
+      <div class="flex-container">
     <button id="button" onclick="verdoppeln()">Verdoppeln</button>
+    </div>
 
     <script>
-      const colors = ["red"];
+
       let anzahl = 1;
       function verdoppeln() {
         const btn = document.getElementById("button");
@@ -22,8 +24,21 @@
         anzahl = anzahl * 2;
         document.getElementById("anzahl").innerHTML = anzahl;
       }
+
+      var colorArray = [
+        "#FF6633",
+        "#FFB399",
+        "#FF33FF",
+        "#FFFF99",
+        "#00B3E6",
+        "#E6B333",
+        "#3366E6",
+        "#999966",
+        "#99FF99",
+        "#B34D4D",
+      ];
     </script>
 
-    <sytle> </sytle>
+
   </body>
 </html>

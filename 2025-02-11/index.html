@@ -3,20 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="stylesheet.css" />
     <title>Button Hell</title>
   </head>
   <body>
     <h1 id="anzahl">Button Hell</h1>
-    <input placeholder="Löschen"></input>
-    <p>
-      <div class="flex-container">
-    <button id="button" onclick="verdoppeln()">Verdoppeln</button>
+    <input type="number" placeholder="Löschen"></input>
+    <button type="button" >Löschen</button>
+    <p></p>
+    <div class="flex-container">
+      <button type="button" onclick="verdoppeln()">
+        Verdoppeln
+      </button>
     </div>
 
     <script>
 
-      let anzahl = 1;
+     let anzahl = 1;
       function verdoppeln() {
         const btn = document.getElementById("button");
         btn2 = btn.cloneNode(true);
@@ -24,6 +27,31 @@
         anzahl = anzahl * 2;
         document.getElementById("anzahl").innerHTML = anzahl;
       }
+
+      /*function verdoppeln() {
+            const btn = document.getElementById("button");
+            const btn2 = btn.cloneNode(true);
+            btn2.style.backgroundColor = colorArray[anzahl % colorArray.length]; 
+            btn2.innerText = `Button ${anzahl + 1}`; 
+            document.getElementById("buttonContainer").appendChild(btn2); 
+          
+            anzahl = anzahl * 2;
+            document.getElementById("anzahl").innerHTML = `Anzahl der Buttons: ${anzahl}`;
+
+        }
+
+      function deleteButtons() {
+            const deleteCount = parseInt(document.getElementById("deleteCount").value) || 0;
+            const container = document.getElementById("buttonContainer");
+            const buttons = container.getElementsByClassName("dynamic-button");
+            for (let i = 0; i < deleteCount; i++) {
+                if (buttons.length > 1) {
+                    container.removeChild(buttons[buttons.length - 1]);
+                }
+            }
+            anzahl -= deleteCount;
+            document.getElementById("anzahl").innerText = `Anzahl der Buttons: ${anzahl}`;
+        }
 
       var colorArray = [
         "#FF6633",
@@ -36,9 +64,7 @@
         "#999966",
         "#99FF99",
         "#B34D4D",
-      ];
+      ];*/
     </script>
-
-
   </body>
 </html>

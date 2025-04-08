@@ -1,0 +1,19 @@
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.child {
+  flex: 0 0 21%;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttonBereich {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

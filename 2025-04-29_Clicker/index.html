@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js"></script>
+    <title>Cookie Clicker</title>
+  </head>
+  <body style="background-color: #38707f">
+    <div style="text-align: center">
+      <h1>Cookies: <text id="cookies">0</text></h1>
+      <text>Cookies per second: <text id="cookiesPerSecond">0</text></text>
+      <br />
+      <br />
+      <svg height="200" width="300">
+        <image
+          onclick="increment()"
+          height="200"
+          width="300"
+          href="https://www.svgrepo.com/show/396073/cookie.svg"
+        />
+      </svg>
+    </div>
+    <button onclick="clicker()">
+      <svg height="110" width="250">
+        <image
+          height="110"
+          width="150"
+          href="https://www.svgrepo.com/show/515652/cookie-clicker.svg"
+        />
+      </svg>
+    </button>
+    <br />
+    <br />
+    <button onclick="doubler()">
+      <svg height="110" width="250">
+        <image
+          height="110"
+          width="150"
+          href="https://www.svgrepo.com/show/154039/baker.svg"
+        />
+      </svg>
+    </button>
+    <br />
+    <br />
+    <button onclick="location.reload()">RESET</button>
+  </body>
+</html>

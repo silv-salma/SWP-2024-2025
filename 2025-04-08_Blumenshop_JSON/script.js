@@ -1,16 +1,3 @@
-function loadJSON(file, callback) {
-  var xobj = new XMLHttpRequest();
-  xobj.overrideMimeType("application/json");
-  xobj.open("GET", file, true);
-  xobj.onreadystatechange = function () {
-    if (xobj.readyState == 4 && xobj.status == "200") {
-      // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
-      callback(xobj.responseText);
-    }
-  };
-  xobj.send(null);
-}
-
 function zeigePreis() {
   const blumenAnzeigen = document.getElementById("blumenAnzeigen");
   const preisDiv = document.getElementById("preis");
@@ -60,6 +47,9 @@ function zeileEinfuegen() {
   zelleName.innerHTML = produktName;
 
   zellePreis.innerHTML = `€${produktPreis}`;
-}
+  gesamtPreis = `€${produktPreis}`;
 
-function gesamtPreis() {}
+  const sumElement = document.getElementById("gesamtPreis");
+  const currentSum = parseFloat(sumElement.textContent);
+  sumElement.textContent = (currentSum + productPrice).toFixed(2);
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Button Hell</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <h1>Button Hell: <text id="button-count">1</text></h1>
+    <div id="control-panel">
+      <input
+        id="delete-count"
+        type="number"
+        min="1"
+        placeholder="Anzahl"
+        aria-label="Anzahl der zu löschenden Buttons"
+      />
+      <button id="delete-button" type="button">Löschen</button>
+    </div>
+
+    <div id="buttons-container">
+      <button id="base-button">Klick mich</button>
+    </div>
+  </body>
+</html>
